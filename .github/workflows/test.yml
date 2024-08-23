@@ -1,8 +1,8 @@
 name: Notify Teams on PR
 
 on:
-  push:
-    branches: main
+#  push:
+#    branches: main
   pull_request:
     types: [opened, reopened, synchronize]
 
