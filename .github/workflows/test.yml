@@ -40,5 +40,8 @@ jobs:
           $prReviewers = "${{ env.reviewers }}"
           $webhookUrl = "YOUR_TEAMS_WEBHOOK_URL"          
           $prAuthorInfo = if ($prAuthorName -and $prAuthorEmail) { "$prAuthorName <$prAuthorEmail>" } else { $prAuthor }
-
+          echo "A new pull request titled `'$prTitle'` has been opened by $prAuthorInfo. Reviewers: $prReviewers. [View PR]($prUrl)"
           Invoke-RestMethod -Uri $webhookUrl -Method Post -ContentType 'application/json' -Body (@{
+              title = "New Pull Request Opened"
+              text  = "A new pull request titled `'$prTitle'` has been opened by $prAuthorInfo. Reviewers: $prReviewers. [View PR]($prUrl)"
+          } | ConvertTo-Json)
