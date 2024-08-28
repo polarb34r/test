@@ -32,6 +32,23 @@ jobs:
           echo "reviewers=$reviewers" >> $env:GITHUB_ENV
           echo $reviewers
 
+      - name: Get PR Reviewers githubevent
+        run: |
+          $reviewers = @()
+          $reviewerInfo = "${{ tojson(github.event.pull_request.requested_reviewers) }}"
+          $reviewersArray = $reviewerInfo | ConvertFrom-Json
+  
+          foreach ($reviewer in $reviewersArray) {
+            $reviewers += $reviewer.login
+          }
+  
+          if ($reviewers.Count -eq 0) {
+            Write-Output "No reviewers have been requested."
+          } else {
+            $reviewersList = $reviewers -join ", "
+            Write-Output "Reviewers: $reviewersList"
+          }
+
       - name: Send PR Notification to Teams
         shell: pwsh
         run: |
