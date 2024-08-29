@@ -51,12 +51,12 @@ jobs:
 
       - name: Output PR details
         run: |
-          Write-Host "PR Number: $env:PR_NUMBER"
-          Write-Host "PR Title: $env:PR_TITLE"
-          Write-Host "PR Description: $env:PR_BODY"
-          Write-Host "PR State: $env:PR_STATE"
-          Write-Host "PR Author: $env:PR_AUTHOR"
-          Write-Host "PR Assignees: $env:PR_ASSIGNEES"
-          Write-Host "PR Reviewers: $env:PR_REVIEWERS"
-          Write-Host "Repository URL: $env:REPO_URL"
-          Write-Host "Pull Request URL: $env:PR_URL"
+          Write-Host "PR Number: ${{ env.PR_NUMBER }}"
+          Write-Host "PR Title: ${{ env.PR_TITLE }}"
+          Write-Host "PR Description: ${{ env.PR_BODY }}"
+          Write-Host "PR State: ${{ env.PR_STATE }}"
+          Write-Host "PR Author: ${{ env.PR_AUTHOR }}"
+          Write-Host "PR Assignees: ${{ env.PR_ASSIGNEES }}"
+          Write-Host "PR Reviewers: ${{ env.PR_REVIEWERS }}"
+          Write-Host "Repository URL: ${{ env.REPO_URL }}"
+          Write-Host "Pull Request URL: ${{ env.PR_URL }}"
