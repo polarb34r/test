@@ -41,7 +41,7 @@ jobs:
           $prUrl = "$repoUrl/pull/$prNumber"
 
           # Fetching modified files (using GitHub API)
-          $modifiedFiles = (Invoke-RestMethod -Uri "$($prData.pull_request.url)/files" -Headers @{Authorization = "Bearer $env:GITHUB_TOKEN"}).filename -join ", "
+          # $modifiedFiles = (Invoke-RestMethod -Uri "$($prData.pull_request.url)/files" -Headers @{Authorization = "Bearer $env:GITHUB_TOKEN"}).filename -join ", "
           
           # Use echo to append variables to GITHUB_ENV
           echo "PR_NUMBER=$prNumber" >> $env:GITHUB_ENV
@@ -53,7 +53,7 @@ jobs:
           echo "PR_REVIEWERS=$prReviewers" >> $env:GITHUB_ENV
           echo "REPO_URL=$repoUrl" >> $env:GITHUB_ENV
           echo "PR_URL=$prUrl" >> $env:GITHUB_ENV
-          echo "PR_MODIFIED_FILES=$modifiedFiles" >> $env:GITHUB_ENV
+          # echo "PR_MODIFIED_FILES=$modifiedFiles" >> $env:GITHUB_ENV
 
       - name: Output PR details
         shell: pwsh
@@ -67,4 +67,4 @@ jobs:
           Write-Host "PR Reviewers: ${{ env.PR_REVIEWERS }}"
           Write-Host "Repository URL: ${{ env.REPO_URL }}"
           Write-Host "Pull Request URL: ${{ env.PR_URL }}"
-          Write-Host "Modified Files: ${{ env.PR_MODIFIED_FILES }}"
+          # Write-Host "Modified Files: ${{ env.PR_MODIFIED_FILES }}"
