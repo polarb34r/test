@@ -40,7 +40,7 @@ jobs:
           $repoUrl = $prData.repository.html_url
           $prUrl = "$repoUrl/pull/$prNumber"
           echo "email=hola" >> $env:GITHUB_ENV
-          Write-Host "PR_NUMBER=$prNumber" | Out-File -FilePath $env:GITHUB_ENV -Append
+          "PR_NUMBER=$prNumber" >> $env:GITHUB_ENV
           Write-Host "PR_TITLE=$prTitle" >> $env:GITHUB_ENV
           Write-Host "PR_BODY=$prBody" >> $env:GITHUB_ENVd
           Write-Host "PR_STATE=$prState" >> $env:GITHUB_ENV
