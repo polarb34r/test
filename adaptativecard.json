@@ -106,5 +106,8 @@
         }
     ],
     "verticalContentAlignment": "Center",
-    "speak": "Please do a pull request approval"
+    "speak": "Please do a pull request approval",
+    "msteams": {
+        "width": "Full"
+    }
 }
