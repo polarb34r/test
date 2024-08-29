@@ -26,6 +26,7 @@ jobs:
 
       - name: Get PR details
         id: pr_details
+        shell: pwsh
         run: |
           $prData = Get-Content $env:GITHUB_EVENT_PATH | ConvertFrom-Json
           
@@ -53,6 +54,7 @@ jobs:
         run: cat $env:GITHUB_ENV
 
       - name: Output PR details
+        shell: pwsh
         run: |
           Write-Host "PR Number: ${{ env.PR_NUMBER }}"
           Write-Host "PR Title: ${{ env.PR_TITLE }}"
