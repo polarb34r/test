@@ -1,0 +1,108 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.3",
+    "backgroundImage": {
+        "url": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+        "horizontalAlignment": "Center",
+        "spacing": "Medium"
+    },
+    "body": [
+        {
+            "type": "Image",
+            "url": "https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png",
+            "horizontalAlignment": "Center",
+            "size": "Medium",
+            "backgroundColor": "transparent",
+            "spacing": "None"
+        },
+        {
+            "type": "TextBlock",
+            "size": "Large",
+            "weight": "Bolder",
+            "color": "Accent",
+            "text": "Pull Request: ${pull_request_title}",
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "Status:  **${repository_status}**",
+            "wrap": true,
+            "separator": true,
+            "color": "Warning",
+            "isSubtle": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "Repository: **${repository_name}**",
+            "wrap": true,
+            "separator": true,
+            "color": "Accent"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Description: ${pull_request_description}",
+            "wrap": true,
+            "spacing": "Small"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Author: **${author_username}**",
+            "wrap": true,
+            "spacing": "Small"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Source Branch: **${source_branch}**",
+            "wrap": true,
+            "spacing": "Small"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Target Branch: **${target_branch}**",
+            "wrap": true,
+            "spacing": "Small"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Reviewers:",
+            "wrap": true,
+            "weight": "Bolder",
+            "spacing": "Medium"
+        },
+        {
+            "type": "FactSet",
+            "facts": [
+                {
+                    "title": "${reviewer_name}",
+                    "value": "${reviewer_comment}"
+                }
+            ]
+        },
+        {
+            "type": "TextBlock",
+            "text": "Files Changed:",
+            "wrap": true,
+            "weight": "Bolder",
+            "spacing": "Medium"
+        },
+        {
+            "type": "FactSet",
+            "facts": [
+                {
+                    "title": "${file_name}",
+                    "value": "${file_status}"
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.OpenUrl",
+            "title": "View Pull Request",
+            "url": "{{pull_request_url}}"
+        }
+    ],
+    "verticalContentAlignment": "Center",
+    "speak": "Please do a pull request approval"
+}
