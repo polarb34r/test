@@ -100,7 +100,9 @@
         {
             "type": "Action.OpenUrl",
             "title": "View Pull Request",
-            "url": "{{pull_request_url}}"
+            "url": "${pull_request_url}",
+            "style": "positive",
+            "iconUrl": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
         }
     ],
     "verticalContentAlignment": "Center",
