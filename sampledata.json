@@ -2,14 +2,15 @@
     "pull_request_title": "Publish Adaptive Card Schema",
     "repository_name": "az-team-adaptative",
     "repository_status": "open",
-    "author_username": "my usen name is large",
+    "author_username": "User name author",
     "pull_request_description": "Now that we have defined the main rules and features of the format, we need to produce a schema and publish it to GitHub. The schema will be the starting point of our reference documentation.",
     "source_branch": "MY CUSTOM BRANCH",
     "target_branch": "MAIN",
-    "reviewer_name": "ohter user name",
+    "reviewer_name": "Reviewer name author",
     "reviewer_comment": "approved",
     "file_name": "file.yml",
     "file_status": "modified",
+    "pull_request_url": "https://google.com",
     
     "text": "bla"
 }
