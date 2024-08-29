@@ -48,6 +48,9 @@ jobs:
           Write-Host "PR_REVIEWERS=$prReviewers" >> $env:GITHUB_ENV
           Write-Host "REPO_URL=$repoUrl" >> $env:GITHUB_ENV
           Write-Host "PR_URL=$prUrl" >> $env:GITHUB_ENV
+      
+      - name: Debug GITHUB_ENV
+        run: cat $env:GITHUB_ENV
 
       - name: Output PR details
         run: |
