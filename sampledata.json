@@ -17,7 +17,10 @@
     "user_avatar_url": "https://avatars.githubusercontent.com/u/14343075?v=4&size=64",
     "created_at": "2024-08-22T23:57:43Z",
     "commits": "1",
+    "requested_reviewers": "Array... 0",
+    "review_comments": "0",
     "pull_request_number": "1",
+    "changed_files": "1",
     "branches_url": "https://github.com/polarb34r/test/branches",
     "text": "bla"
 }
