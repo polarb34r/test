@@ -165,7 +165,7 @@
                     "items": [
                         {
                             "type": "TextBlock",
-                            "text": "0 Reviewers",
+                            "text": "${requested_reviewers} Reviewers",
                             "wrap": true,
                             "isSubtle": true
                         }
@@ -193,7 +193,7 @@
                     "items": [
                         {
                             "type": "TextBlock",
-                            "text": "1 Comments",
+                            "text": "${review_comments} Comments",
                             "wrap": true,
                             "isSubtle": true
                         }
@@ -221,7 +221,7 @@
                     "items": [
                         {
                             "type": "TextBlock",
-                            "text": "1 Comments",
+                            "text": "${changed_files} Files changed",
                             "wrap": true,
                             "isSubtle": true
                         }
