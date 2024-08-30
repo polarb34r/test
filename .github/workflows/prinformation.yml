@@ -68,3 +68,18 @@ jobs:
           Write-Host "Repository URL: ${{ env.REPO_URL }}"
           Write-Host "Pull Request URL: ${{ env.PR_URL }}"
           # Write-Host "Modified Files: ${{ env.PR_MODIFIED_FILES }}"
+
+      - name: Get modified files using PowerShell
+        shell: pwsh
+        run: |
+          $prNumber = "${{ github.event.pull_request.number }}"
+          $repoName = "${{ github.repository }}"
+          $token = "${{ secrets.GITHUB_TOKEN }}"
+          $url = "https://api.github.com/repos/$repoName/pulls/$prNumber/files"
+          
+          $headers = @{ Authorization = "token $token" }
+          $response = Invoke-RestMethod -Uri $url -Headers $headers
+          $modifiedFiles = $response | ForEach-Object { $_.filename }
+
+          $modifiedFiles
+            
