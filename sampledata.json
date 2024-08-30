@@ -1,8 +1,10 @@
 {
     "pull_request_title": "Publish Adaptive Card Schema",
-    "repository_name": "az-team-adaptative",
+    "repository_name": "Bigcompany\\az-team-adaptative",
     "repository_status": "open",
+    "repository_status_url": "https://github.com/polarb34r/test/blob/main/pullrequestmerged.png?raw=true",
     "author_username": "User name author",
+    "author_username_url": "https://github.com/polarb34r",
     "pull_request_description": "Now that we have defined the main rules and features of the format, we need to produce a schema and publish it to GitHub. The schema will be the starting point of our reference documentation.",
     "source_branch": "MY CUSTOM BRANCH",
     "target_branch": "MAIN",
@@ -10,7 +12,12 @@
     "reviewer_comment": "approved",
     "file_name": "file.yml",
     "file_status": "modified",
-    "pull_request_url": "https://google.com",
-    
+    "pull_request_url": "https://github.com/polarb34r/test/blob/main/pullrequest.png?raw=true",
+    "github_avatar_url": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+    "user_avatar_url": "https://avatars.githubusercontent.com/u/14343075?v=4&size=64",
+    "created_at": "2024-08-22T23:57:43Z",
+    "commits": "1",
+    "pull_request_number": "1",
+    "branches_url": "https://github.com/polarb34r/test/branches",
     "text": "bla"
 }
