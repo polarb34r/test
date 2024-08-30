@@ -9,8 +9,7 @@
                     "items": [
                         {
                             "type": "Image",
-                            "style": "Person",
-                            "url": "${creator.profileImage}",
+                            "url": "${github_avatar_url}",
                             "altText": "${creator.name}",
                             "size": "Small"
                         }
@@ -29,7 +28,7 @@
                         {
                             "type": "TextBlock",
                             "spacing": "None",
-                            "text": "Created {{DATE(${createdUtc},SHORT)}}",
+                            "text": "Created {{DATE(${created_at},SHORT)}}",
                             "isSubtle": true,
                             "wrap": true
                         }
@@ -46,8 +45,7 @@
                     "items": [
                         {
                             "type": "Image",
-                            "style": "Person",
-                            "url": "https://github.com/polarb34r/test/blob/main/pullrequest.png?raw=true",
+                            "url": "${pull_request_url}",
                             "altText": "${creator.name}",
                             "size": "Small"
                         }
@@ -73,7 +71,7 @@
                         {
                             "type": "TextBlock",
                             "spacing": "None",
-                            "text": "[https://www.google.com/hola](https://www.google.com/hola)",
+                            "text": "[${repository_name}  #${pull_request_number} ](${pull_request_url})",
                             "isSubtle": true,
                             "wrap": true,
                             "separator": true
@@ -86,7 +84,7 @@
         },
         {
             "type": "TextBlock",
-            "text": "My very long an interesting change",
+            "text": "${pull_request_title}",
             "wrap": true,
             "separator": true,
             "style": "default",
@@ -98,7 +96,7 @@
         },
         {
             "type": "TextBlock",
-            "text": "${description}",
+            "text": "${pull_request_description}",
             "wrap": true
         },
         {
@@ -109,7 +107,7 @@
                     "items": [
                         {
                             "type": "Image",
-                            "url": "https://github.com/polarb34r/test/blob/main/pullrequestmerged.png?raw=true",
+                            "url": "${repository_status_url}",
                             "altText": "${creator.name}",
                             "size": "Large",
                             "spacing": "None"
@@ -123,7 +121,7 @@
                         {
                             "type": "Image",
                             "style": "Person",
-                            "url": "https://avatars.githubusercontent.com/u/14343075?v=4&size=64",
+                            "url": "${user_avatar_url}",
                             "altText": "${creator.name}",
                             "size": "Small"
                         }
@@ -136,7 +134,7 @@
                         {
                             "type": "TextBlock",
                             "spacing": "None",
-                            "text": "[aaguero-gd](https://www.google.com/hola)",
+                            "text": "[${author_username}](${author_username_url})",
                             "isSubtle": true,
                             "wrap": true
                         }
@@ -149,7 +147,7 @@
                         {
                             "type": "TextBlock",
                             "spacing": "None",
-                            "text": "wants to merge $numberofcommits from $base into $target",
+                            "text": "wants to merge ${commits} commit(s) from [${source_branch}](${branches_url}) into [${target_branch}](${branches_url})",
                             "isSubtle": true,
                             "wrap": true,
                             "separator": true
@@ -160,14 +158,77 @@
             ]
         },
         {
-            "type": "TextBlock",
-            "text": "New TextBlock",
-            "wrap": true
-        },
-        {
-            "type": "TextBlock",
-            "text": "New TextBlock",
-            "wrap": true
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "0 Reviewers",
+                            "wrap": true,
+                            "isSubtle": true
+                        }
+                    ],
+                    "width": "auto"
+                },
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": " ° ",
+                            "wrap": true,
+                            "horizontalAlignment": "Center",
+                            "size": "ExtraLarge",
+                            "weight": "Bolder",
+                            "color": "Dark",
+                            "fontType": "Monospace"
+                        }
+                    ],
+                    "width": "auto"
+                },
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "1 Comments",
+                            "wrap": true,
+                            "isSubtle": true
+                        }
+                    ],
+                    "width": "auto"
+                },
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "°",
+                            "wrap": true,
+                            "horizontalAlignment": "Center",
+                            "fontType": "Monospace",
+                            "size": "ExtraLarge",
+                            "color": "Dark",
+                            "weight": "Bolder"
+                        }
+                    ],
+                    "width": "auto"
+                },
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "1 Comments",
+                            "wrap": true,
+                            "isSubtle": true
+                        }
+                    ],
+                    "width": "auto"
+                }
+            ]
         }
     ],
     "actions": [
