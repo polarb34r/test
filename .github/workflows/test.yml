@@ -65,3 +65,33 @@ jobs:
               title = "New Pull Request Opened"
               text  = "A new pull request titled `'$prTitle'` has been opened by $prAuthorInfo. Reviewers: $prReviewers. [View PR]($prUrl)"
           } | ConvertTo-Json)
+          
+          {
+            "type": "message",
+            "attachments": [
+              {
+                "contentType": "application/vnd.microsoft.card.adaptive",
+                "content": {
+                  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                  "type": "AdaptiveCard",
+                  "version": "1.3",
+                  "body": [
+                    {
+                      "type": "TextBlock",
+                      "text": "This message was sent via a webhook."
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": "Action.Submit",
+                      "title": "Mark as Viewed",
+                      "data": {
+                        "action": "viewed"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+
