@@ -1,0 +1,23 @@
+name: On Merge to Main
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  run-on-merge:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run a script
+        run: echo "Pull request has been merged!"
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
