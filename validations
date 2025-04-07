@@ -1,0 +1,45 @@
+# Load the event payload
+$event = Get-Content $env:GITHUB_EVENT_PATH | ConvertFrom-Json
+
+# Extract labels
+$labels = $event.pull_request.labels.name
+
+# Initialize the flag
+$shouldContinue = $false
+
+# Logic
+if ($labels -contains 'flow-runned-before') {
+    Write-Host "Label 'flow-runned-before' found. Will not continue."
+    $shouldContinue = $false
+} elseif ($labels -contains 'terraform-changes') {
+    Write-Host "Label 'terraform-changes' found. Will continue."
+    $shouldContinue = $true
+} else {
+    Write-Host "No relevant labels found. Will not continue."
+    $shouldContinue = $false
+}
+
+# Output the flag value (optional for debugging)
+Write-Host "shouldContinue = $shouldContinue"
+
+# You can now use $shouldContinue later in your script to conditionally proceed
+
+
+  #______________________________
+
+  $description = @"
+Este es un ejemplo de descripción del PR.
+Se creo el pr o cmabio (cambio-2345) [https://www.jira.com/org/cambio-2345]
+Otros detalles...
+"@
+
+# Expresión regular para extraer el código y el enlace
+# if ($description -match 'Se creo el pr o cmabio\s*\(([^)]+)\)\s*\[([^\]]+)\]') {
+if ($description -match 'Se creo el pr o cmabio \(([^)]+)\) \[([^\]]+)\]') {
+    $codigo = $matches[1]
+    $url = $matches[2]
+    Write-Host "Código detectado: $codigo"
+    Write-Host "URL detectada: $url"
+} else {
+    Write-Host "Formato no válido o no se encontró la línea."
+}
